@@ -14,11 +14,11 @@ body, html {
 
 header {
     background-color: gray;
-    text-align: center;
 }
 
 header > h1 {
     padding: 10px;
+    text-align: center;
 }
 
 .material-symbols-outlined {

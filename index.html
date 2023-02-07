@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Query</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
-    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/style.css" media="all">
+    <link rel="stylesheet" href="estilos/bigscreens.css" media="screen and (min-width: 768px)">
 </head>
-<body>
+<body onresize="changeOfSize()">
     <header>
         <h1>Meu site</h1>
         <span class="material-symbols-outlined" id="burguer-menu">menu</span>
@@ -30,17 +31,25 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat consequuntur hic, cumque ipsa rerum nemo ea similique aut at autem nam, provident dicta perspiciatis saepe, necessitatibus voluptatum deleniti. Repellat, quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et doloremque eum quod doloribus corporis blanditiis sit tempora laborum. Impedit vel quaerat sequi laboriosam esse? Dicta, aliquid reprehenderit. Quisquam, assumenda saepe.</p>
         </article>
     </main>
-    <script>
-        let menuItems = document.querySelector('#items')
-        document.querySelector('#burguer-menu').addEventListener('click', function(){
-            if (menuItems.style.display == 'block')
-            {
-                menuItems.style.display = 'none'
-            }
-            else {
-                menuItems.style.display = 'block'
-            }
-        })
-    </script>
 </body>
+<script>
+    let menuItems = document.querySelector('#items')
+    document.querySelector('#burguer-menu').addEventListener('click', function(){
+        if (menuItems.style.display == 'block')
+        {
+            menuItems.style.display = 'none'
+        }
+        else {
+            menuItems.style.display = 'block'
+        }
+    })
+    
+    
+    function changeOfSize(){
+        if (window.innerWidth >= 768){
+            menuItems.style.display = 'block'
+        }
+    }
+
+</script>
 </html>
