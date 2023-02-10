@@ -17,8 +17,8 @@ html {
     display: none;
     font-size: 3em;
     color: white;
-    margin-left: 2%;
-    margin-top: 10%;
+    margin-left: 5vw;
+    margin-top: 10px;
     background-color: rgba(116, 116, 115, 0);
     border: 1px solid white;
     border-radius: 100%;
@@ -34,7 +34,7 @@ html {
 }
 
 main {
-    background-color: rgba(0, 0, 0, 0.144);
+    background-color: rgba(0, 0, 0, 0.15);
     position: absolute;
     width: 80%;
     height: 50%;
@@ -48,15 +48,17 @@ main {
     transition: width .5s, height .5s;
 }
 
-#content {
-    height: 70%;
+#start-menu {
+    display: block;
 }
-h1 {
+
+/*Start Menu*/
+#start-menu h1 {
     margin-top: 10px;
     font-size: 2.5em;
     color: rgba(167, 110, 154, 0);
-    -webkit-text-stroke-width: 0.7px; /* largura da borda */
-    -webkit-text-stroke-color: #ffffff; /* cor da borda */
+    -webkit-text-stroke-width: 0.7px; 
+    -webkit-text-stroke-color: #ffffff; 
     text-align: center;
 }
 
@@ -90,4 +92,98 @@ button:active {
     color: black;
     box-shadow: none;
     transform: translateY(5px);  
+}
+
+/*Scenes Menu*/
+#select-menu {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+#title-menu > h1 {
+    margin-top: 10px;
+    font-size: 3em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.11);
+    border: none;
+    -webkit-text-stroke-width: 1px; 
+    -webkit-text-stroke-color: #ffffff;
+    /*text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);*/
+}
+
+#scenes-menu {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+#prev-scenes {
+    position: relative;
+    height: 80%;
+    width: 15%;
+    display: flex;
+}
+
+#prev-scenes > #back-scenes {
+    position: absolute;
+    font-size: 3.5em;
+    color: white;
+    border: 1px solid white;
+    border-radius: 100%;
+    /*box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);*/
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+#prev-scenes > #back-scenes:active {
+    background-color: white;
+    color: black;
+    box-shadow: none;
+    transform: translate(-50%, -40%);
+}
+
+#next-scenes {
+    position: relative;
+    height: 80%;
+    width: 15%;
+}
+
+#next-scenes > #advance-scenes {
+    position: absolute;
+    font-size: 3.5em;
+    color: white;
+    border: 1px solid white;
+    border-radius: 100%;
+    /*box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);*/
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+#next-scenes > #advance-scenes:active {
+    background-color: white;
+    color: black;
+    box-shadow: none;
+    transform: translate(-50%, -40%);
+}
+
+
+
+#scenes {
+    height: 80%;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#scenes > div {
+    background-color: rgba(199, 197, 197, 0.397);
+    width: 40%;
+    height: 40%;
+    border-radius: 100%;
+    margin: auto;
+    border: 1px solid black;
 }
