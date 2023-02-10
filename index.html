@@ -4,52 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Query</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
-    <link rel="stylesheet" href="estilos/style.css" media="all">
-    <link rel="stylesheet" href="estilos/bigscreens.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body onresize="changeOfSize()">
-    <header>
-        <h1>Meu site</h1>
-        <span class="material-symbols-outlined" id="burguer-menu">menu</span>
-        <menu id="items">
-            <ul>
-                <li><a href="#">Opção 1</a></li>
-                <li><a href="#">Opção 2</a></li>
-                <li><a href="#">Opção 3</a></li>
-                <li><a href="#">Opção 4</a></li>
-                <li><a href="#">Opção 5</a></li>
-            </ul>
-        </menu>
-    </header>
+<body>
+
     <main>
-        <article>
-            <h2>Testando Media Queries</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat consequuntur hic, cumque ipsa rerum nemo ea similique aut at autem nam, provident dicta perspiciatis saepe, necessitatibus voluptatum deleniti. Repellat, quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et doloremque eum quod doloribus corporis blanditiis sit tempora laborum. Impedit vel quaerat sequi laboriosam esse? Dicta, aliquid reprehenderit. Quisquam, assumenda saepe.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat consequuntur hic, cumque ipsa rerum nemo ea similique aut at autem nam, provident dicta perspiciatis saepe, necessitatibus voluptatum deleniti. Repellat, quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et doloremque eum quod doloribus corporis blanditiis sit tempora laborum. Impedit vel quaerat sequi laboriosam esse? Dicta, aliquid reprehenderit. Quisquam, assumenda saepe.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat consequuntur hic, cumque ipsa rerum nemo ea similique aut at autem nam, provident dicta perspiciatis saepe, necessitatibus voluptatum deleniti. Repellat, quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et doloremque eum quod doloribus corporis blanditiis sit tempora laborum. Impedit vel quaerat sequi laboriosam esse? Dicta, aliquid reprehenderit. Quisquam, assumenda saepe.</p>
-        </article>
+        <div id="imagem"></div>
+        <div id="content">
+            <h1 id="title">Name</h1>
+            <span id="logo" class="material-symbols-outlined">engineering</span>
+            <button id="start">Iniciar</button>
+        </div>
     </main>
 </body>
-<script>
-    let menuItems = document.querySelector('#items')
-    document.querySelector('#burguer-menu').addEventListener('click', function(){
-        if (menuItems.style.display == 'block')
-        {
-            menuItems.style.display = 'none'
-        }
-        else {
-            menuItems.style.display = 'block'
-        }
-    })
-    
-    
-    function changeOfSize(){
-        if (window.innerWidth >= 768){
-            menuItems.style.display = 'block'
-        }
-    }
-
-</script>
 </html>
