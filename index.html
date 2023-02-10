@@ -10,13 +10,28 @@
 </head>
 <body>
 
-    <main>
-        <div id="imagem"></div>
-        <div id="content">
-            <h1 id="title">O Nome</h1>
-            <span id="logo" class="material-symbols-outlined">engineering</span>
-            <button id="start">Iniciar</button>
-        </div>
+    <main id="main">
+        <article>
+            <div id="imagem"></div>
+            <div id="content">
+                <h1 id="title">O Nome</h1>
+                <span id="logo" class="material-symbols-outlined">engineering</span>
+                <button id="start" onclick="mudar()">Iniciar</button>
+            </div>
+        </article>
     </main>
+    <script>
+        function mudar(){
+            let main = document.querySelector('main')
+            if (main.style.width == '90%'){
+                main.style.width = '250px'
+                main.style.height = '500px'
+            }
+            else {
+                main.style.width = '90%'
+                main.style.height = '50%'
+            }
+        }
+    </script>
 </body>
 </html>
