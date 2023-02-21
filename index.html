@@ -18,7 +18,7 @@
             <div>
                 <h1 id="title">O Nome</h1>
                 <span id="logo" class="material-symbols-outlined">engineering</span>
-                <button id="start" onclick="mudar()">Iniciar</button>
+                <button id="start" onblur="console.log(2)" onclick="mudar()">Iniciar</button>
             </div>
         </article>
         <article id="select-menu">
@@ -32,10 +32,22 @@
                         </span>
                 </div>
                 <div id="scenes">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div>
+                        <div onclick="ir()" id="scene1"></div>
+                        <p>Cena 1</p>
+                    </div>
+                    <div>
+                        <div></div>
+                        <p>Cena 2</p>
+                    </div>
+                    <div>
+                        <div></div>
+                        <p>Cena 3</p>
+                    </div>
+                    <div>
+                        <div></div>
+                        <p>Cena 4</p>
+                    </div>
                 </div>
                 <div id="next-scenes">
                     <span id="advance-scenes" class="material-symbols-outlined">
@@ -51,6 +63,10 @@
         let backPage = document.querySelector('#back-page')
         let selectScenes = document.querySelector('#select-menu')
         let startMenu = document.querySelector('#start-menu')
+        function ir()
+        {
+            document.location.href = 'scenes/scene001/scene.html'
+        }
         function mudar(){
             firstContent.style.display = 'none'
             main.style.width = '100%'

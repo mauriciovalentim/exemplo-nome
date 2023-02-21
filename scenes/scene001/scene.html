@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cena 01</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100vw;
+            height: 100vh;
+        }
+        #game {
+            height: 70vh;
+            width: 100%;
+            background-image: linear-gradient(to bottom, blue, green);
+            position: relative;
+        }
+        #animation {
+            border: 2px solid black;
+        }
+        #imagem {
+            height: 30%;
+            display: block;
+            margin: auto;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        #machine {
+            background-color: gray;
+            position: absolute;
+            width: 60%;
+            height: 50%;
+            user-select: none;
+            border: 1px solid black;
+            border-radius: 15% 15% 0px 0px;
+            overflow: hidden;
+            left: 50%;
+            bottom: 5px;
+            transform: translate(-50%);
+        }
+        #paper {
+            font-family: cursive;
+            font-size: .8em;
+            background-color: antiquewhite;
+            padding: 5px;
+            width: 75px;
+            height: 100px;
+            position: absolute;
+            left: 10px;
+            top: 5px;
+        }
+        #red-button {
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            border-radius: 100%;
+            margin: 10px;
+            display: inline-block;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            bottom: 5px;
+            left: 18%;
+        }
+        #red-button:active {
+            width: 45px;
+            height: 45px;
+            box-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.3);
+            margin-left: 15px;
+        }
+        #green-button {
+            height: 50px;
+            width: 50px;
+            background-color: green;
+            border-radius: 100%;
+            margin: 10px;
+            display: inline-block;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            bottom: 5px;
+            right: 18%;
+        }
+        #green-button:active {
+            width: 45px;
+            height: 45px;
+            box-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.3);
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <article id="game">
+        <div id="machine">
+            <div id="paper">Instruções <br> 1: botão verde <br> 2: botão vermelho
+            </div>
+            <div onclick="addRed()" id="red-button"></div>
+            <div onclick="addGreen()" id="green-button"></div>
+        </div>
+    </article>
+    <article id="animation">
+        <img id="imagem" src="sprite_complete.png" alt="">
+    </article>
+    <script>
+        
+        let imagem = document.querySelector('#imagem')
+        let redButton = 0
+        let greenButton = 0
+        function addRed(){
+            if (greenButton == 0){
+                cutHead()
+                redButton = 3
+                greenButton = 3
+            }
+            else {
+                redButton = 3
+                greenButton = 3
+                setTimeout(function(){
+                    document.location.href = '../../index.html'
+                }, 2000)
+            }
+            
+            
+        }
+        function addGreen(){
+            if (greenButton == 1){
+                cutHead()
+                redButton = 3
+                greenButton = 3
+
+            }
+            else {
+                greenButton = 1
+            }
+        }
+        function cutArm(){
+            arrayIndices = []
+            for (let i = 0; i <= 23; i++){
+                if (i < 10){
+                    arrayIndices.push(`left-arm/sprite_0${i}.png`)
+                }
+                else {
+                    arrayIndices.push(`left-arm/sprite_${i}.png`)
+                }
+            }
+
+            let cont = 1;
+            let myInterval = setInterval(function(){
+                imagem.src = arrayIndices[cont]
+                if (cont < 23) {
+                    cont += 1
+                }
+                else {
+                    stopAnimation()
+                    setTimeout(function(){
+                    document.location.href = '../../index.html'
+                }, 2000)
+                }
+            }, 75)
+            
+            function stopAnimation(){
+                clearInterval(myInterval)
+            }
+        }
+
+        function cutHead(){
+            arrayIndices = []
+            for (let i = 0; i <= 31; i++){
+                if (i < 10){
+                    arrayIndices.push(`no-head/nohead0${i}.png`)
+                }
+                else {
+                    arrayIndices.push(`no-head/nohead${i}.png`)
+                }
+            }
+
+            let cont = 1;
+            let myInterval = setInterval(function(){
+                imagem.src = arrayIndices[cont]
+                if (cont < 30) {
+                    cont += 1
+                }
+                else {
+                    stopAnimation()
+                    setTimeout(function(){
+                    document.location.href = '../../index.html'
+                }, 2000)
+                }
+            }, 75)
+            
+            function stopAnimation(){
+                clearInterval(myInterval)
+            }
+        }
+    </script>
+</body>
+</html>
