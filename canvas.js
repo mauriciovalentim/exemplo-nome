@@ -1,8 +1,8 @@
 canvas = document.querySelector('canvas')
 button = document.querySelector('button')
 
-let width = window.innerWidth - (window.innerHeight)
-let height = window.innerHeight - (window.innerHeight)
+let width = window.innerWidth - (window.innerWidth/100*30)
+let height = window.innerHeight - (window.innerHeight/100*30)
 canvas.width = width
 canvas.height = height
 
@@ -27,7 +27,7 @@ context.stroke()
 
 
 let x = 200
-let velocity = 1
+let velocity = 4
 let radius = 30
 let anim = true 
 
