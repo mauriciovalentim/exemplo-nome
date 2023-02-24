@@ -27,7 +27,9 @@ context.stroke()
 
 
 let x = 200
-let velocity = 4
+let y = 200
+let velocityX = 4
+let velocityY = 4
 let radius = 30
 let anim = true 
 
@@ -43,17 +45,18 @@ function startAnimation(){
         context.clearRect(0, 0, width, height)
 
         context.beginPath()
-        context.arc(x, 200, radius, 0, Math.PI*2, false)
+        context.arc(x, y, radius, 0, Math.PI*2, false)
         context.strokeStyle = 'blue'
         context.stroke()
         if (x > width - radius || x < 0 + radius) {
-            velocity = -velocity
+            velocityX = -velocityX
         }
-        x += velocity
+        if (y > height - radius || y < 0 + radius) {
+            velocityY = -velocityY
+        }
+        x += velocityX
+        y += velocityY
     }
-    
-    
-
 }
 
 startAnimation()
