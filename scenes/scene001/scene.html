@@ -27,7 +27,7 @@
         }
         #animation {
             border: 1px solid black;
-            height: 25vh;
+            height: 30vh;
             width: 100%;
         }
         #machine {
@@ -107,11 +107,12 @@
     </main>
     
     <script type="module">
+
         import {sceneTransition} from '../../animations.js'
 
         document.querySelector('#red-button').addEventListener('click', function(){addRed()})
         document.querySelector('#green-button').addEventListener('click', function(){addGreen()})
-
+        scroll(20000, 20000)
         let canvas = document.querySelector('#animation')
         let context = canvas.getContext('2d')
         let imgSize = canvas.width  / 100 * 50
