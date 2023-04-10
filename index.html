@@ -4,11 +4,151 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conselho</title>
+    <title>Local Music</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        html {
+            width: 100vw;
+            height: 100vh;
+            max-height: 100%;
+            max-width: 100%;
+        }
+        body {
+            background-color: black;
+        }
+        main {
+            width: 20%;
+            max-width: 300px;
+            height: 80%;
+            max-height: 600px;
+            background-color: white;
+            padding: 1em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        main h1 {
+            margin: 0px;
+            text-align: center;
+            height: 10%;
+        }
+        main h2 {
+            margin-bottom: .5em;
+        }
+
+        main div#music-list {
+            height: 65%;
+            overflow-y: scroll;
+            background-color: rgba(112, 112, 112, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+        }
+        main div#music-list div {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(255, 228, 196, 0.5);
+            border-radius: 10px;
+            margin-bottom: .4em;
+            padding: .5em;
+        }
+
+        main div#music-list #singer {
+            color: rgb(136, 136, 136);
+        }
+
+        main div#music-list #song {
+            color: black;
+        }
+
+        main button {
+            height: 10%;
+            margin: 1em 0;
+            padding: .5em;
+        }
+
+        #active-location {
+            background-color: rgb(117, 117, 121);
+            border-radius: 10px;
+            width: 75%;
+            padding: 1em;
+            color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #active-location button {
+            border-radius: 10px;
+            border: none;
+        }
+
+        #white {
+            width: 100%;
+            height: 120%;
+            background-color: white;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <h1>Conselho do dia</h1>
-    <p id="conselho"></p>
-    <script src="script.js"></script>
+    <main>
+        <div id="white"></div>
+        <h1 id="real-location">Recife</h1>
+        <h2>Lista de músicas: </h2>
+        <div id="music-list">
+            <div>
+                <p id="song">Música</p>
+                <p id="singer">Cantor</p>
+            </div>
+            <div>
+                <p id="song">Música</p>
+                <p id="singer">Cantor</p>
+            </div>
+            <div>
+                <p id="song">Música</p>
+                <p id="singer">Cantor</p>
+            </div>
+            <div>
+                <p id="song">Música</p>
+                <p id="singer">Cantor</p>
+            </div>
+            <div>
+                <p id="song">Música</p>
+                <p id="singer">Cantor</p>
+            </div>
+            <div>
+                <p id="song">Música</p>
+                <p id="singer">Cantor</p>
+            </div>
+            <div>
+                <p id="song">Música</p>
+                <p id="singer">Cantor</p>
+            </div>
+        </div>
+        <div id="active-location">
+            <p>Este aplicativo precisa da sua localização</p>
+            <button id="ativar">OK</button>
+            <button>Recusar</button>
+        </div>
+        <button>Abrir Playlist</button>
+    </main>
+    <script>
+        let main = document.querySelector('main')
+        main.style.height = '80%'
+        main.style.width = `${main.clientHeight/2}px`
+        btn = document.querySelector('#ativar')
+        btn.addEventListener('click', () => {
+            document.querySelector('#active-location').style.display = 'none'
+            document.querySelector('#white').style.display = 'none'
+        })
+    </script>
 </body>
 </html>
